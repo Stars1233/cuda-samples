@@ -636,7 +636,7 @@ Answers to frequently asked questions about CUDA can be found at http://develope
 
 ## References
 
-*   [CUDA Programming Guide](http://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html)
+*   [CUDA Programming Guide](https://docs.nvidia.com/cuda/cuda-programming-guide/index.html)
 *   [Accelerated Computing Blog](https://developer.nvidia.com/blog/?tags=accelerated-computing)
 
 ## Attributions
