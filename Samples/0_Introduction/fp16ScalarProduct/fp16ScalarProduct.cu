@@ -94,7 +94,7 @@ scalarProductKernel_intrinsics(half2 const *const a, half2 const *const b, float
     shArray[threadIdx.x] = __float2half2_rn(0.f);
     half2 value          = __float2half2_rn(0.f);
 
-    for (int i = threadIdx.x + blockDim.x + blockIdx.x; i < size; i += stride) {
+    for (int i = threadIdx.x + blockDim.x * blockIdx.x; i < size; i += stride) {
         value = __hfma2(a[i], b[i], value);
     }
 
@@ -118,7 +118,7 @@ scalarProductKernel_native(half2 const *const a, half2 const *const b, float *co
     half2 value(0.f, 0.f);
     shArray[threadIdx.x] = value;
 
-    for (int i = threadIdx.x + blockDim.x + blockIdx.x; i < size; i += stride) {
+    for (int i = threadIdx.x + blockDim.x * blockIdx.x; i < size; i += stride) {
         value = a[i] * b[i] + value;
     }
 
